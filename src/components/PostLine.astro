@@ -1,0 +1,18 @@
+---
+// Signature «лінія постів»: Lviv base first (red), then the six other rapid-response cities. Laid out from Lviv on load.
+import { cities } from "../data/site";
+interface Props { variant?: "hero" | "footer"; label: string; animate?: boolean; }
+const { variant = "hero", label, animate = false } = Astro.props;
+const id = `postline-${variant}`;
+---
+<div class:list={["postline", `postline--${variant}`]} data-postline={animate ? "" : undefined}>
+  <p class="postline__label" id={id}>{label}</p>
+  <ol class="postline__list" aria-labelledby={id}>
+    {cities.map((c, i) => (
+      <li class:list={["postline__post", { "is-base": "base" in c && c.base }]} style={`--i:${i}`}>
+        <span class="postline__name">{c.name}</span>
+        {"base" in c && c.base && <span class="postline__note">чергова частина</span>}
+      </li>
+    ))}
+  </ol>
+</div>

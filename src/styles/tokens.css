@@ -1,0 +1,68 @@
+/* Hallmark · shape: hire-service page, call-led · genre: editorial · theme: custom · job: hire · idea: "Аутпост як мережа постів Львівщини — від чергової частини на Коцюбинського, 6 до семи міст ГШР; об'єкт підключається до мережі одним дзвінком на 0-800" · vibe: "чергова служба, синя ніч, червоний виклик, конкретно"
+ * paper: #FFFFFF · accent: #D50C0C · display: Fira Sans Extra Condensed · body: Onest · hero: синій блок, H1 зліва, аерофото колони екіпажів під обріз праворуч, лінія постів 7 міст на всю ширину · nav: біла sticky-шапка, 6 якорів, 0-800 і кнопка дзвінка · footer: глибокий синій, компактна лінія постів, контакти за ролями · imagery: client photos · surface: absolute · signature: лінія постів, що розгортається в схему Львівської області
+ * axes: light/display-condensed/chromatic-red · posture: committed · contrast: pass · fold: pass · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V4 · weakest: E, the services index is quiet; answered with red tick on hover/focus and the separate legal band */
+/* Hallmark · waive 7b · --color-bg #FFFFFF and --color-on-dark #FFFFFF are the client's brand white (client.json C-013) · approved concept.md palette fixes pure white for paper and text on the brand blue */
+/* Hallmark · waive 39b · the hero and price call buttons stand 56px and carry the number on a second line · concept.md fixes a 56px primary call button so the free number reads as part of the action */
+/* Hallmark · waive 23 · .contacts__free sets the free number 0-800-401-911 in the brand red at display size · concept.md (contacts row) makes the red free number the largest text after H1 because the call is the page's one action */
+/* Client design tokens from design/concept.md (veon-concept: colors, fonts). */
+:root {
+  /* colour */
+  --color-primary: #1E1D66;
+  --color-deep: #13123F;
+  --color-accent: #D50C0C;
+  --color-accent-press: #A80A0A;
+  --color-accent-on-dark: #FF5A4E;
+  --color-bg: #FFFFFF;
+  --color-surface: #F2F2F6;
+  --color-text: #232323;
+  --color-muted: #5A5A70;
+  --color-muted-on-dark: #B9B8DA;
+  --color-rule: #D9D9E3;
+  --color-on-dark: #FFFFFF;
+  --color-accent-ink: #FFFFFF;
+  --color-map-line: #8A89B8;
+  --color-focus: var(--color-primary);
+
+  /* type */
+  --font-display: "Fira Sans Extra Condensed", "Fira Fallback", "Fira Fallback Roboto", sans-serif;
+  --font-body: "Onest Variable", "Onest Fallback", system-ui, sans-serif;
+  --fs-h1: clamp(2.75rem, 1.9rem + 3.4vw, 5.5rem);
+  --fs-h2: clamp(2.375rem, 1.75rem + 2.6vw, 4rem);
+  --fs-h3: clamp(1.75rem, 1.45rem + 1.25vw, 2.5rem);
+  --fs-h4: clamp(1.375rem, 1.25rem + .5vw, 1.625rem);
+  --fs-figure: clamp(6.5rem, 4.4rem + 8.6vw, 10.5rem);
+  --fs-phone: clamp(3rem, 1.8rem + 5vw, 6rem);
+  --fs-lead: clamp(1.125rem, 1.05rem + .3vw, 1.3125rem);
+  --fs-body: clamp(1rem, .95rem + .2vw, 1.125rem);
+  --fs-small: .875rem;
+  --lh-tight: .95;
+  --lh-head: 1;
+  --lh-body: 1.55;
+
+  /* space: 8 px rhythm */
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 64px; --s-9: 96px; --s-10: 128px;
+  --space: 20px;
+  --gutter: 16px;
+  --container: 1320px;
+  --pad-open: 72px;
+  --pad-dense: 48px;
+  --header-h: 60px;
+  --callbar-h: 64px;
+  --radius: 4px;
+  --rule-w: 1px;
+
+  /* motion */
+  --ease-out: cubic-bezier(.2, .7, .2, 1);
+  --dur: 400ms;
+  --dur-fast: 180ms;
+  --dur-mid: 250ms;
+  --dur-line: 500ms;
+  --dur-map: 600ms;
+}
+@media (min-width: 768px) {
+  :root { --space: 24px; --gutter: 24px; --pad-open: 96px; --pad-dense: 56px; --header-h: 72px; --dur-line: 700ms; --dur-map: 900ms; }
+}
+@media (min-width: 1280px) {
+  :root { --space: 32px; --pad-open: 128px; --pad-dense: 64px; }
+}

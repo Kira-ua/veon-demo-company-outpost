@@ -1,0 +1,34 @@
+---
+import Section from "./Section.astro";
+import CallButton from "./CallButton.astro";
+import PostLine from "./PostLine.astro";
+---
+<Section id="hero" class="hero on-dark" rec="UX-R001,UX-R002,SP-R002,G-R003,MA-R003">
+  <div class="hero__grid">
+    <div class="hero__copy">
+      <h1 class="hero__title" data-rec="SEO-R001">Охоронна компанія у Львові та області: пультова і фізична охорона</h1>
+      <p class="hero__lead">Охоронно-юридична компанія «Аутпост»: власний ПЦО, групи швидкого реагування в 7 містах області.</p>
+      <div class="hero__actions">
+        <CallButton label="Подзвонити безкоштовно" size="l" class="hero__cta" />
+        <a class="link-quiet link-quiet--on-dark" href="#services">Обрати послугу</a>
+      </div>
+    </div>
+    <ul class="hero__facts">
+      <li>Страхування відповідальності 2 млн грн</li>
+      <li>Ліцензований центр підготовки</li>
+      <li>Чергова частина цілодобово</li>
+    </ul>
+    <figure class="hero__photo" data-rec="SEO-R005,SP-R001">
+      <picture>
+        <source media="(max-width: 767px)" type="image/avif" srcset="/img/hryp-kolona-mob-480.avif 480w, /img/hryp-kolona-mob-600.avif 600w" sizes="100vw" />
+        <source media="(max-width: 767px)" type="image/webp" srcset="/img/hryp-kolona-mob-480.webp 480w, /img/hryp-kolona-mob-600.webp 600w" sizes="100vw" />
+        <source type="image/avif" srcset="/img/hryp-kolona-480.avif 480w, /img/hryp-kolona-800.avif 800w, /img/hryp-kolona-1156.avif 1156w" sizes="(min-width: 768px) 50vw, 100vw" />
+        <source type="image/webp" srcset="/img/hryp-kolona-480.webp 480w, /img/hryp-kolona-800.webp 800w, /img/hryp-kolona-1156.webp 1156w" sizes="(min-width: 768px) 50vw, 100vw" />
+        <img src="/img/hryp-kolona-800.webp" width="1156" height="736" alt="Екіпажі груп швидкого реагування «Аутпост» біля службових автомобілів з написом «Аутпост», вигляд згори" fetchpriority="high" decoding="async" />
+      </picture>
+    </figure>
+  </div>
+  <div class="container hero__line">
+    <PostLine variant="hero" label="Групи швидкого реагування" animate />
+  </div>
+</Section>

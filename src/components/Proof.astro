@@ -1,0 +1,51 @@
+---
+import Section from "./Section.astro";
+import FutureLink from "./FutureLink.astro";
+import { NOTE } from "../data/site";
+---
+<Section id="proof" class="proof">
+  <div class="container">
+    <h2 class="section-title proof__title">Чому довіряють «Аутпост»</h2>
+  </div>
+  <div class="proof__row1">
+    <figure class="proof__photo" data-rec="SEO-R005,SP-R001">
+      <picture>
+        <source type="image/avif" srcset="/img/tsentr-pidgotovky-480.avif 480w, /img/tsentr-pidgotovky-908.avif 908w" sizes="(min-width: 1024px) 58vw, 100vw" />
+        <source type="image/webp" srcset="/img/tsentr-pidgotovky-480.webp 480w, /img/tsentr-pidgotovky-908.webp 908w" sizes="(min-width: 1024px) 58vw, 100vw" />
+        <img src="/img/tsentr-pidgotovky-908.webp" width="908" height="603" alt="Вхід до Центру спецпідготовки «Аутпост» з вивіскою «Об’єднання підприємств „Компанія «Аутпост»“»" loading="lazy" decoding="async" />
+      </picture>
+    </figure>
+    <div class="proof__insurance">
+      <p class="proof__figure num">2 млн грн</p>
+      <p class="proof__figure-text">Страхова сума ризиків відповідальності. Щорічно збільшується.</p>
+    </div>
+  </div>
+  <div class="container">
+    <ul class="proof__facts">
+      <li class="fact">
+        <h3 class="fact__title">Центр спеціальної підготовки «Аутпост»</h3>
+        <p class="fact__text">Власний ліцензований центр, де навчаються наші охоронники.</p>
+      </li>
+      <li class="fact">
+        <h3 class="fact__title">ЄВРО 2012</h3>
+        <p class="fact__text">Охороняли масові заходи, серед них ЄВРО 2012 з футболу.</p>
+      </li>
+      <li class="fact">
+        <h3 class="fact__title">Автопарк з 22 автомобілів</h3>
+        <p class="fact__text">Групи реагування зі зброєю для стрільби гумовими кулями.</p>
+        <p class="fact__small">Toyota Corolla, KIA Sportage, Renault Duster, Renault Logan, Ravon R4, Ford Transit, Renault Trafic, Land Rover Sport, Toyota Land Cruiser</p>
+      </li>
+    </ul>
+    <figure class="proof__awards">
+      <picture>
+        <source type="image/avif" srcset="/img/nagorody-480.avif 480w, /img/nagorody-800.avif 800w, /img/nagorody-1175.avif 1175w" sizes="(min-width: 1320px) 1256px, 100vw" />
+        <source type="image/webp" srcset="/img/nagorody-480.webp 480w, /img/nagorody-800.webp 800w, /img/nagorody-1175.webp 1175w" sizes="(min-width: 1320px) 1256px, 100vw" />
+        <img src="/img/nagorody-800.webp" width="1175" height="553" alt="Стіна з дипломами, грамотами й сертифікатами компанії «Аутпост»" loading="lazy" decoding="async" />
+      </picture>
+      <figcaption class="proof__awards-caption">
+        <span>Неодноразовий переможець Всеукраїнського рейтингу професіоналізму служб охорони і безпеки (2021).</span>
+        <FutureLink note={NOTE}>Ліцензії та нагороди</FutureLink>
+      </figcaption>
+    </figure>
+  </div>
+</Section>

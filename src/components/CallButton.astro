@@ -1,0 +1,14 @@
+---
+// Primary call action: red fill, white Onest 600, phone icon that rocks on hover.
+import Icon from "./Icon.astro";
+import { phones } from "../data/site";
+interface Props { label: string; size?: "l" | "m"; block?: boolean; showNumber?: boolean; class?: string; rec?: string; }
+const { label, size = "l", block = false, showNumber = true, class: cls, rec } = Astro.props;
+---
+<a class:list={["btn-call", `btn-call--${size}`, { "btn-call--block": block }, cls]} href={phones.free.href} data-rec={rec}>
+  <Icon name="phone" size={size === "l" ? 24 : 20} class="btn-call__icon" />
+  <span class="btn-call__text">
+    <span class="btn-call__label">{label}</span>
+    {showNumber && <span class="btn-call__number">{phones.free.display}</span>}
+  </span>
+</a>

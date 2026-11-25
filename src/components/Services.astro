@@ -1,0 +1,38 @@
+---
+import Section from "./Section.astro";
+import FutureLink from "./FutureLink.astro";
+import { serviceGroups, phones, NOTE } from "../data/site";
+---
+<Section id="services" class="services" rec="UX-R003">
+  <div class="container">
+    <div class="services__head">
+      <h2 class="section-title">Що ми охороняємо</h2>
+      <p class="section-lead">Оберіть свою задачу. Формат охорони й вартість узгоджуємо після обстеження об’єкта.</p>
+    </div>
+    <div class="services__groups">
+      {serviceGroups.map((g) => (
+        <section class="svc-group" aria-labelledby={`svc-${g.id}`}>
+          <h3 class="svc-group__title" id={`svc-${g.id}`}>{g.title}</h3>
+          <ul class="svc-group__list">
+            {g.items.map((s) => (
+              <li class="svc">
+                <h4 class="svc__name">{s.name}</h4>
+                <p class="svc__text">{s.text}</p>
+                <FutureLink note={NOTE} class="svc__more">Детальніше<span class="visually-hidden">: {s.name}</span></FutureLink>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </div>
+  </div>
+  <div class="legal-band">
+    <div class="container legal-band__inner">
+      <h3 class="legal-band__title">Юридична допомога</h3>
+      <div class="legal-band__body">
+        <p>«Аутпост» — охоронно-юридична компанія: крім охорони, ми надаємо юридичну допомогу у сфері охорони. Розкажіть про свою ситуацію телефоном — <a class="inline-phone" href={phones.free.href}>{phones.free.display}</a>, дзвінок безкоштовний.</p>
+        <FutureLink note={NOTE} class="svc__more">Детальніше<span class="visually-hidden">: юридична допомога</span></FutureLink>
+      </div>
+    </div>
+  </div>
+</Section>

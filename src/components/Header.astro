@@ -1,0 +1,73 @@
+---
+import Icon from "./Icon.astro";
+import FutureLink from "./FutureLink.astro";
+import { nav, phones, NOTE } from "../data/site";
+---
+<header class="site-header" data-rec="UX-R008">
+  <div class="site-header__inner container">
+    <a class="brand" href="#top" aria-label="Аутпост, на початок сторінки">
+      <img class="brand__logo" src="/img/logo-shchyt.webp" width="124" height="156" alt="" decoding="async" fetchpriority="low" />
+      <span class="brand__text">
+        <span class="brand__name">Аутпост</span>
+        <span class="brand__tag">охоронно-юридична компанія</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" aria-label="Розділи сторінки">
+      <ul class="main-nav__list">
+        {nav.map((n) => <li><a class="main-nav__link" href={n.href}>{n.label}</a></li>)}
+      </ul>
+    </nav>
+
+    <div class="site-header__actions">
+      <FutureLink note={NOTE} class="cabinet-link">
+        <Icon name="user" size={22} />
+        <span class="visually-hidden">Особистий кабінет</span>
+      </FutureLink>
+      <a class="header-phone" href={phones.free.href}>
+        <span class="header-phone__number">{phones.free.display}</span>
+        <span class="header-phone__hint">безкоштовно</span>
+      </a>
+      <a class="header-call" href={phones.free.href}>
+        <Icon name="phone" size={20} class="btn-call__icon" />
+        <span class="header-call__label">Подзвонити</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" hidden data-menu-open>
+        <Icon name="menu" size={22} />
+        <span>Меню</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<dialog class="mobile-menu" id="mobile-menu" aria-label="Меню">
+  <div class="mobile-menu__inner">
+    <div class="mobile-menu__top">
+      <span class="mobile-menu__title">Аутпост</span>
+      <button class="mobile-menu__close" type="button" data-menu-close>
+        <Icon name="close" size={22} />
+        <span>Закрити</span>
+      </button>
+    </div>
+    <nav aria-label="Розділи сторінки, мобільне меню">
+      <ul class="mobile-menu__list">
+        {nav.map((n) => <li><a class="mobile-menu__link" href={n.href} data-menu-link>{n.label}</a></li>)}
+      </ul>
+    </nav>
+    <ul class="mobile-menu__future">
+      <li><FutureLink note={NOTE}>Про компанію</FutureLink></li>
+      <li><FutureLink note={NOTE}>Вакансії</FutureLink></li>
+      <li><FutureLink note={NOTE}>Особистий кабінет</FutureLink></li>
+    </ul>
+    <div class="mobile-menu__phones">
+      <a class="mobile-menu__phone" href={phones.free.href}>
+        <span class="mobile-menu__phone-num">{phones.free.display}</span>
+        <span class="mobile-menu__phone-role">безкоштовно по Україні</span>
+      </a>
+      <a class="mobile-menu__phone" href={phones.duty.href}>
+        <span class="mobile-menu__phone-num">{phones.duty.display}</span>
+        <span class="mobile-menu__phone-role">Черговий</span>
+      </a>
+    </div>
+  </div>
+</dialog>

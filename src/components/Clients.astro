@@ -1,0 +1,19 @@
+---
+import Section from "./Section.astro";
+import FutureLink from "./FutureLink.astro";
+import { phones, NOTE } from "../data/site";
+---
+<Section id="clients" class="clients" rec="UX-R007">
+  <div class="container clients__grid">
+    <div class="clients__main">
+      <h2 class="section-title">Вже наш клієнт</h2>
+      <p class="clients__role">Черговий, цілодобово</p>
+      <a class="clients__phone num" href={phones.duty.href}>{phones.duty.display}</a>
+    </div>
+    <ul class="clients__links">
+      <li><FutureLink note={NOTE}>Інструкція з користування сигналізацією</FutureLink></li>
+      <li><FutureLink note={NOTE}>Публічний договір</FutureLink></li>
+      <li><FutureLink note={NOTE}>Особистий кабінет</FutureLink></li>
+    </ul>
+  </div>
+</Section>

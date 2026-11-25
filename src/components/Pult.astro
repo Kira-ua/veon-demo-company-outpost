@@ -1,0 +1,33 @@
+---
+import Section from "./Section.astro";
+import FutureLink from "./FutureLink.astro";
+import CallButton from "./CallButton.astro";
+import { prices, NOTE } from "../data/site";
+---
+<Section id="pult" class="pult" rec="UX-R004">
+  <div class="container pult__grid">
+    <div class="pult__figure-wrap">
+      <h2 class="section-title">Пультова охорона: ціни</h2>
+      <p class="pult__figure">
+        <span class="pult__from">від</span>
+        <span class="pult__num num">550</span>
+        <span class="pult__unit">грн/міс</span>
+      </p>
+      <p class="pult__sub">Сигналізація на власний пульт централізованої охорони, виїзд групи швидкого реагування.</p>
+    </div>
+    <div class="pult__table-wrap">
+      <dl class="price-table">
+        {prices.map((p, i) => (
+          <div class="price-row" data-reveal style={`--reveal-delay:${i * 50}ms`}>
+            <dt class="price-row__label">{p.label}{"note" in p && <span class="price-row__note">{p.note}</span>}</dt>
+            <dd class="price-row__value num">{p.value}</dd>
+          </div>
+        ))}
+      </dl>
+      <div class="pult__actions">
+        <CallButton label="Замовити обстеження" size="l" />
+        <FutureLink note={NOTE}>Порядок прийому під охорону</FutureLink>
+      </div>
+    </div>
+  </div>
+</Section>

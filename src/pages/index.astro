@@ -1,0 +1,38 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Services from "../components/Services.astro";
+import Pult from "../components/Pult.astro";
+import Coverage from "../components/Coverage.astro";
+import Proof from "../components/Proof.astro";
+import Clients from "../components/Clients.astro";
+import Contacts from "../components/Contacts.astro";
+import Footer from "../components/Footer.astro";
+import CallBar from "../components/CallBar.astro";
+
+const title = "Охорона у Львові: пультова та фізична — Аутпост";
+const description = "Охоронно-юридична компанія «Аутпост»: пультова охорона від 550 грн/міс, фізична охорона, ГШР у Львові та області, власний ПЦО. Телефон 0-800-401-911.";
+---
+<Base lang="uk" title={title} description={description} rec="SP-R003,SP-R004,MA-R002">
+  <Fragment slot="head">
+    <link rel="preload" href="/fonts/fira-sans-extra-condensed-cyrillic-800-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/fira-sans-extra-condensed-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/fira-sans-extra-condensed-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/onest-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/onest-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+  </Fragment>
+  <Header slot="header" />
+  <Hero />
+  <Services />
+  <Pult />
+  <Coverage />
+  <Proof />
+  <Clients />
+  <Contacts />
+  <Fragment slot="footer">
+    <Footer />
+    <CallBar />
+  </Fragment>
+  <script src="../scripts/site.ts"></script>
+</Base>

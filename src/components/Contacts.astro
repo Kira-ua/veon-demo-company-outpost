@@ -1,0 +1,47 @@
+---
+import Section from "./Section.astro";
+import FutureLink from "./FutureLink.astro";
+import Icon from "./Icon.astro";
+import { phones, email, address, socials, NOTE } from "../data/site";
+const roles = [phones.duty, phones.office, phones.director];
+---
+<Section id="contacts" class="contacts" rec="UX-R008,S-R009">
+  <div class="container">
+    <h2 class="section-title">Контакти</h2>
+    <div class="contacts__main">
+      <a class="contacts__free num" href={phones.free.href}>{phones.free.display}</a>
+      <p class="contacts__free-note">Безкоштовно по Україні</p>
+    </div>
+    <div class="contacts__grid">
+      <dl class="contacts__roles">
+        {roles.map((r) => (
+          <div class="role">
+            <dt class="role__label">{r.label}</dt>
+            <dd><a class="role__value num" href={r.href}>{r.display}</a></dd>
+          </div>
+        ))}
+        <div class="role">
+          <dt class="role__label">E-mail</dt>
+          <dd><a class="role__value role__value--text" href={email.href}><Icon name="mail" size={20} />{email.display}</a></dd>
+        </div>
+      </dl>
+      <div class="contacts__place">
+        <p class="role__label">Адреса</p>
+        <p class="contacts__address">{address.display}</p>
+        <a class="link-quiet" href={address.map} target="_blank" rel="noopener"><Icon name="pin" size={20} /><span>Відкрити на карті</span><span class="visually-hidden"> (відкриється в новій вкладці)</span></a>
+      </div>
+      <div class="contacts__social">
+        <p class="role__label">Ми в соцмережах</p>
+        <ul class="social-list">
+          {socials.map((s) => (
+            <li><a class="social" href={s.href} target="_blank" rel="noopener"><Icon name={s.icon} size={22} /><span>{s.name}</span><span class="visually-hidden"> (відкриється в новій вкладці)</span></a></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+    <div class="contacts__jobs">
+      <p>Робота в «Аутпост»: <a class="role__value num" href={phones.hr.href}>{phones.hr.display}</a> <span class="contacts__jobs-note">співбесіди за вакансіями</span></p>
+      <FutureLink note={NOTE}>Вакансії</FutureLink>
+    </div>
+  </div>
+</Section>
