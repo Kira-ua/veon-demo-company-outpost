@@ -1,4 +1,5 @@
 ---
+import { asset } from "../lib/asset";
 import Section from "./Section.astro";
 import FutureLink from "./FutureLink.astro";
 import { NOTE } from "../data/site";
@@ -10,9 +11,9 @@ import { NOTE } from "../data/site";
   <div class="proof__row1">
     <figure class="proof__photo" data-rec="SEO-R005,SP-R001">
       <picture>
-        <source type="image/avif" srcset="/img/tsentr-pidgotovky-480.avif 480w, /img/tsentr-pidgotovky-908.avif 908w" sizes="(min-width: 1024px) 58vw, 100vw" />
-        <source type="image/webp" srcset="/img/tsentr-pidgotovky-480.webp 480w, /img/tsentr-pidgotovky-908.webp 908w" sizes="(min-width: 1024px) 58vw, 100vw" />
-        <img src="/img/tsentr-pidgotovky-908.webp" width="908" height="603" alt="Вхід до Центру спецпідготовки «Аутпост» з вивіскою «Об’єднання підприємств „Компанія «Аутпост»“»" loading="lazy" decoding="async" />
+        <source type="image/avif" srcset={asset("/img/tsentr-pidgotovky-480.avif") + " 480w" + ", " + asset("/img/tsentr-pidgotovky-908.avif") + " 908w"} sizes="(min-width: 1024px) 58vw, 100vw" />
+        <source type="image/webp" srcset={asset("/img/tsentr-pidgotovky-480.webp") + " 480w" + ", " + asset("/img/tsentr-pidgotovky-908.webp") + " 908w"} sizes="(min-width: 1024px) 58vw, 100vw" />
+        <img src={asset("/img/tsentr-pidgotovky-908.webp")} width="908" height="603" alt="Вхід до Центру спецпідготовки «Аутпост» з вивіскою «Об’єднання підприємств „Компанія «Аутпост»“»" loading="lazy" decoding="async" />
       </picture>
     </figure>
     <div class="proof__insurance">
@@ -38,9 +39,9 @@ import { NOTE } from "../data/site";
     </ul>
     <figure class="proof__awards">
       <picture>
-        <source type="image/avif" srcset="/img/nagorody-480.avif 480w, /img/nagorody-800.avif 800w, /img/nagorody-1175.avif 1175w" sizes="(min-width: 1320px) 1256px, 100vw" />
-        <source type="image/webp" srcset="/img/nagorody-480.webp 480w, /img/nagorody-800.webp 800w, /img/nagorody-1175.webp 1175w" sizes="(min-width: 1320px) 1256px, 100vw" />
-        <img src="/img/nagorody-800.webp" width="1175" height="553" alt="Стіна з дипломами, грамотами й сертифікатами компанії «Аутпост»" loading="lazy" decoding="async" />
+        <source type="image/avif" srcset={asset("/img/nagorody-480.avif") + " 480w" + ", " + asset("/img/nagorody-800.avif") + " 800w" + ", " + asset("/img/nagorody-1175.avif") + " 1175w"} sizes="(min-width: 1320px) 1256px, 100vw" />
+        <source type="image/webp" srcset={asset("/img/nagorody-480.webp") + " 480w" + ", " + asset("/img/nagorody-800.webp") + " 800w" + ", " + asset("/img/nagorody-1175.webp") + " 1175w"} sizes="(min-width: 1320px) 1256px, 100vw" />
+        <img src={asset("/img/nagorody-800.webp")} width="1175" height="553" alt="Стіна з дипломами, грамотами й сертифікатами компанії «Аутпост»" loading="lazy" decoding="async" />
       </picture>
       <figcaption class="proof__awards-caption">
         <span>Неодноразовий переможець Всеукраїнського рейтингу професіоналізму служб охорони і безпеки (2021).</span>

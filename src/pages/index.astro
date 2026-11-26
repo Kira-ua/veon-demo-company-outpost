@@ -1,4 +1,5 @@
 ---
+import { asset } from "../lib/asset";
 import Base from "../layouts/Base.astro";
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
@@ -16,11 +17,11 @@ const description = "Охоронно-юридична компанія «Аут
 ---
 <Base lang="uk" title={title} description={description} rec="SP-R003,SP-R004,MA-R002">
   <Fragment slot="head">
-    <link rel="preload" href="/fonts/fira-sans-extra-condensed-cyrillic-800-normal.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/fira-sans-extra-condensed-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/fira-sans-extra-condensed-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/onest-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/onest-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={asset("/fonts/fira-sans-extra-condensed-cyrillic-800-normal.woff2")} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={asset("/fonts/fira-sans-extra-condensed-latin-800-normal.woff2")} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={asset("/fonts/fira-sans-extra-condensed-latin-700-normal.woff2")} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={asset("/fonts/onest-cyrillic-wght-normal.woff2")} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={asset("/fonts/onest-latin-wght-normal.woff2")} as="font" type="font/woff2" crossorigin />
   </Fragment>
   <Header slot="header" />
   <Hero />

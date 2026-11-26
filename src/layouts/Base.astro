@@ -1,4 +1,5 @@
 ---
+import { asset } from "../lib/asset";
 import "../styles/tokens.css";
 import "../styles/global.css";
 import "../styles/fonts.css";
@@ -23,7 +24,7 @@ const { lang, title, description, canonical, rec } = Astro.props;
     <meta property="og:locale" content="uk_UA" />
     <meta name="theme-color" content="#1E1D66" />
     <meta name="robots" content="noindex" />
-    <link rel="icon" type="image/webp" href="/img/logo-shchyt.webp" />
+    <link rel="icon" type="image/webp" href={asset("/img/logo-shchyt.webp")} />
     <slot name="head" />
     <style is:global>html, body { overflow-x: clip; }</style>
   </head>

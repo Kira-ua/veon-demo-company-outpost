@@ -1,4 +1,5 @@
 ---
+import { asset } from "../lib/asset";
 import Section from "./Section.astro";
 import CallButton from "./CallButton.astro";
 import PostLine from "./PostLine.astro";
@@ -20,11 +21,11 @@ import PostLine from "./PostLine.astro";
     </ul>
     <figure class="hero__photo" data-rec="SEO-R005,SP-R001">
       <picture>
-        <source media="(max-width: 767px)" type="image/avif" srcset="/img/hryp-kolona-mob-480.avif 480w, /img/hryp-kolona-mob-600.avif 600w" sizes="100vw" />
-        <source media="(max-width: 767px)" type="image/webp" srcset="/img/hryp-kolona-mob-480.webp 480w, /img/hryp-kolona-mob-600.webp 600w" sizes="100vw" />
-        <source type="image/avif" srcset="/img/hryp-kolona-480.avif 480w, /img/hryp-kolona-800.avif 800w, /img/hryp-kolona-1156.avif 1156w" sizes="(min-width: 768px) 50vw, 100vw" />
-        <source type="image/webp" srcset="/img/hryp-kolona-480.webp 480w, /img/hryp-kolona-800.webp 800w, /img/hryp-kolona-1156.webp 1156w" sizes="(min-width: 768px) 50vw, 100vw" />
-        <img src="/img/hryp-kolona-800.webp" width="1156" height="736" alt="Екіпажі груп швидкого реагування «Аутпост» біля службових автомобілів з написом «Аутпост», вигляд згори" fetchpriority="high" decoding="async" />
+        <source media="(max-width: 767px)" type="image/avif" srcset={asset("/img/hryp-kolona-mob-480.avif") + " 480w" + ", " + asset("/img/hryp-kolona-mob-600.avif") + " 600w"} sizes="100vw" />
+        <source media="(max-width: 767px)" type="image/webp" srcset={asset("/img/hryp-kolona-mob-480.webp") + " 480w" + ", " + asset("/img/hryp-kolona-mob-600.webp") + " 600w"} sizes="100vw" />
+        <source type="image/avif" srcset={asset("/img/hryp-kolona-480.avif") + " 480w" + ", " + asset("/img/hryp-kolona-800.avif") + " 800w" + ", " + asset("/img/hryp-kolona-1156.avif") + " 1156w"} sizes="(min-width: 768px) 50vw, 100vw" />
+        <source type="image/webp" srcset={asset("/img/hryp-kolona-480.webp") + " 480w" + ", " + asset("/img/hryp-kolona-800.webp") + " 800w" + ", " + asset("/img/hryp-kolona-1156.webp") + " 1156w"} sizes="(min-width: 768px) 50vw, 100vw" />
+        <img src={asset("/img/hryp-kolona-800.webp")} width="1156" height="736" alt="Екіпажі груп швидкого реагування «Аутпост» біля службових автомобілів з написом «Аутпост», вигляд згори" fetchpriority="high" decoding="async" />
       </picture>
     </figure>
   </div>

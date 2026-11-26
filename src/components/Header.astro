@@ -1,4 +1,5 @@
 ---
+import { asset } from "../lib/asset";
 import Icon from "./Icon.astro";
 import FutureLink from "./FutureLink.astro";
 import { nav, phones, NOTE } from "../data/site";
@@ -6,7 +7,7 @@ import { nav, phones, NOTE } from "../data/site";
 <header class="site-header" data-rec="UX-R008">
   <div class="site-header__inner container">
     <a class="brand" href="#top" aria-label="Аутпост, на початок сторінки">
-      <img class="brand__logo" src="/img/logo-shchyt.webp" width="124" height="156" alt="" decoding="async" fetchpriority="low" />
+      <img class="brand__logo" src={asset("/img/logo-shchyt.webp")} width="124" height="156" alt="" decoding="async" fetchpriority="low" />
       <span class="brand__text">
         <span class="brand__name">Аутпост</span>
         <span class="brand__tag">охоронно-юридична компанія</span>
